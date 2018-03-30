@@ -46,7 +46,10 @@
     "pub": "rc-tools run pub --babel-runtime",
     "lint": "rc-tools run lint",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "clean": "rc-tools run clean",
+    "dist": "rc-tools run dist --babel-runtime",
+    "clean-compile-dist": "npm run clean && npm run compile && npm run dist"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -86,7 +89,7 @@
     "babel-runtime": "6.x",
     "classnames": "2.x",
     "create-react-class": "^15.5.2",
-    "moment": "2.x",
+    "moment": "../moment",
     "prop-types": "^15.5.8",
     "rc-trigger": "^2.2.0",
     "rc-util": "^4.1.1"
