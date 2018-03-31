@@ -62,6 +62,7 @@ class YearPanel extends React.Component {
     const startYear = parseInt(currentYear / 10, 10) * 10;
     const endYear = startYear + 9;
     const prefixCls = this.prefixCls;
+    const isBuddishEra = (locale.yearFormat === 'BBBB');
 
     const yeasEls = years.map((row, index) => {
       const tds = row.map(yearData => {
@@ -90,7 +91,7 @@ class YearPanel extends React.Component {
             <a
               className={`${prefixCls}-year`}
             >
-              {yearData.content}
+              {isBuddishEra ? yearData.year+543 : yearData.content}
             </a>
           </td>);
       });
@@ -114,7 +115,7 @@ class YearPanel extends React.Component {
               title={locale.decadeSelect}
             >
               <span className={`${prefixCls}-decade-select-content`}>
-                {startYear}-{endYear}
+                {isBuddishEra ? `${startYear+543}-${endYear+543}` : `${startYear}-${endYear}`}
               </span>
               <span className={`${prefixCls}-decade-select-arrow`}>x</span>
             </a>

@@ -6,24 +6,28 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import Calendar from 'rc-calendar';
 import DatePicker from 'rc-calendar/src/Picker';
-import zhCN from 'rc-calendar/src/locale/zh_CN';
-import enUS from 'rc-calendar/src/locale/en_US';
+//import zhCN from 'rc-calendar/src/locale/zh_CN';
+//import enUS from 'rc-calendar/src/locale/en_US';
+import thTH from 'rc-calendar/src/locale/th_TH';
 import 'rc-time-picker/assets/index.css';
 import TimePickerPanel from 'rc-time-picker/lib/Panel';
 
 import moment from 'moment';
-import 'moment/locale/zh-cn';
-import 'moment/locale/en-gb';
+//import 'moment/locale/zh-cn';
+//import 'moment/locale/en-gb';
+import 'moment/locale/th';
 
 const format = 'YYYY-MM-DD HH:mm:ss';
-const cn = location.search.indexOf('cn') !== -1;
+//const cn = location.search.indexOf('cn') !== -1;
 
 const now = moment();
+/*
 if (cn) {
   now.locale('zh-cn').utcOffset(8);
 } else {
   now.locale('en-gb').utcOffset(0);
 }
+*/
 
 function getFormat(time) {
   return time ? format : 'YYYY-MM-DD';
@@ -109,7 +113,8 @@ class Demo extends React.Component {
   render() {
     const state = this.state;
     const calendar = (<Calendar
-      locale={cn ? zhCN : enUS}
+      //locale={cn ? zhCN : enUS}
+      locale={thTH}
       style={{ zIndex: 1000 }}
       dateInputPlaceholder="please input"
       formatter={getFormat(state.showTime)}
@@ -209,7 +214,8 @@ ReactDOM.render((<div
     <div style={{ margin: 10 }}>
       <Calendar
         showWeekNumber={false}
-        locale={cn ? zhCN : enUS}
+        //locale={cn ? zhCN : enUS}
+        locale={thTH}
         defaultValue={now}
         disabledTime={disabledTime}
         showToday

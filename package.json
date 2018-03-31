@@ -1,6 +1,6 @@
 {
   "name": "rc-calendar",
-  "version": "9.6.0",
+  "version": "9.6.0+THAI.1",
   "description": "React Calendar",
   "keywords": [
     "react",
@@ -30,7 +30,7 @@
   },
   "licenses": "MIT",
   "config": {
-    "port": 8002,
+    "port": 9002,
     "entry": {
       "rc-calendar": [
         "./assets/index.less",
@@ -89,7 +89,7 @@
     "babel-runtime": "6.x",
     "classnames": "2.x",
     "create-react-class": "^15.5.2",
-    "moment": "../moment",
+    "moment": "../moment/moment-v2.21.0+THAI.1.tgz",
     "prop-types": "^15.5.8",
     "rc-trigger": "^2.2.0",
     "rc-util": "^4.1.1"

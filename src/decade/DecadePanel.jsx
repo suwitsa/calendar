@@ -44,6 +44,7 @@ class DecadePanel extends React.Component {
     const decades = [];
     let index = 0;
     const prefixCls = this.prefixCls;
+    const isBuddishEra = (locale.yearFormat === 'BBBB');
 
     for (let rowIndex = 0; rowIndex < ROW; rowIndex++) {
       decades[rowIndex] = [];
@@ -70,7 +71,7 @@ class DecadePanel extends React.Component {
           [`${prefixCls}-last-century-cell`]: isLast,
           [`${prefixCls}-next-century-cell`]: isNext,
         };
-        const content = `${dStartDecade}-${dEndDecade}`;
+        const content = isBuddishEra ? `${dStartDecade+543}-${dEndDecade+543}` : `${dStartDecade}-${dEndDecade}`;
         let clickHandler;
         if (isLast) {
           clickHandler = this.previousCentury;
@@ -106,7 +107,7 @@ class DecadePanel extends React.Component {
           />
 
           <div className={`${prefixCls}-century`}>
-            {startYear}-{endYear}
+            {isBuddishEra ? `${startYear+543}-${endYear+543}` : `${startYear}-${endYear}`}
           </div>
           <a
             className={`${prefixCls}-next-century-btn`}
